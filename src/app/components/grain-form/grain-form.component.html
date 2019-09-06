@@ -1,0 +1,144 @@
+<label style="font: bold">Enter grains details</label>
+<div class="card my-5">
+    <div class="card-body bg-ligth">
+        <form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm">
+
+            <table style="width: 100%">
+                <tr>
+                    <td>
+                        <label class="control-label" for="name">Grain name</label>
+                    </td>
+                    <td>
+                        <input type="text" autocomplete="off" class="form-control"
+                            onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"
+                            id="grainName" name="grainName" required placeholder="Enter grain name"
+                            [(ngModel)]="grains.grainName" required>
+                    </td>
+                </tr>
+                <br>
+                <tr><label class="control-label" for="name" style="font: bold">Purchase Details</label></tr>
+
+                <tr>
+                    <td> <label class="control-label" for="name">Date</label></td>
+                    <td> <input type="date" autocomplete="off" class="form-control" id="Date" name="Date" required
+                            placeholder="Date" [(ngModel)]="grains.purchaseDetails.date" required></td>
+                </tr>
+                <tr>
+                    <td><label class="control-label" for="name">Genes</label></td>
+                    <td> <input type="text" autocomplete="off" class="form-control" id="Genes" name="Genes" required
+                            placeholder="Genes" [(ngModel)]="grains.purchaseDetails.genes" required></td>
+                </tr>
+
+                <tr>
+                    <td><label class="control-label" for="name">Quantity</label></td>
+                    <td><input type="number" autocomplete="off" class="form-control" id="Quantity" name="Quantity"
+                            required placeholder="Quantity" [(ngModel)]="grains.purchaseDetails.quantity" required></td>
+                </tr>
+                <tr>
+                    <td><label class="control-label" for="name">Rate</label> </td>
+                    <td><input type="number" autocomplete="off" class="form-control" id="Rate" name="Rate" required
+                            placeholder="Rate" [(ngModel)]="grains.purchaseDetails.rate" required>
+                    </td>
+                </tr>
+                <!-- <tr>
+                        <td><label class="control-label" for="name">Amount</label></td>
+                        <td><input type="number"   autocomplete="off" class="form-control"
+                            id="Amount" name="Amount" required placeholder="Amount" 
+                            [(ngModel)]="grains.purchaseDetails.amount" required></td>
+                    </tr> -->
+                <tr>
+                    <td><label class="control-label" for="name">Closing Stock</label> </td>
+                    <td><input type="number" autocomplete="off" class="form-control" id="Closing Stock"
+                            name="Closing Stock" required placeholder="Closing Stock"
+                            [(ngModel)]="grains.purchaseDetails.closingStock" required>
+                    </td>
+                </tr>
+
+                <br>
+                <tr><label class="control-label" for="name" style="font: bold">Sales Details</label></tr>
+
+                <tr>
+                    <td> <label class="control-label" for="name">Date</label> </td>
+                    <td><input type="date" autocomplete="off" class="form-control" id="Date" name="Date" required
+                            placeholder="Date" [(ngModel)]="grains.salesDetails.date" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label class="control-label" for="name">Bill</label></td>
+                    <td><input type="number" autocomplete="off" class="form-control" id="Bill" name="Bill" required
+                            placeholder="Bill" [(ngModel)]="grains.salesDetails.bill" required></td>
+                </tr>
+
+                <tr>
+                    <td><label class="control-label" for="name">Party</label> </td>
+                    <td><input type="text" autocomplete="off" class="form-control" id="Party" name="Party" required
+                            placeholder="Party" [(ngModel)]="grains.salesDetails.party" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label class="control-label" for="name">Gsnt No.</label> </td>
+                    <td><input type="number" autocomplete="off" class="form-control" id="GstNumber" name="GstNumber"
+                            required placeholder="GstNumber" [(ngModel)]="grains.salesDetails.gstNumber" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label class="control-label" for="name">Quantity</label> </td>
+                    <td><input type="number" autocomplete="off" class="form-control" id="Quantity" name="Quantity"
+                            required placeholder="Quantity" [(ngModel)]="grains.salesDetails.quantity" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label class="control-label" for="name">Rate</label> </td>
+                    <td><input type="number" autocomplete="off" class="form-control" id="Rate" name="Rate" required
+                            placeholder="Rate" [(ngModel)]="grains.salesDetails.rate" required>
+                    </td>
+                </tr>
+                <!-- 
+                    <tr>
+                        <td><label class="control-label" for="name">Amount</label> </td>
+                            <td><input type="number"   autocomplete="off" class="form-control"
+                                id="grainName" name="grainName" required placeholder="Amount" 
+                                [(ngModel)]="grains.salesDetails.amount" required>
+                        </td>
+                    </tr> -->
+
+                <tr>
+                    <td><label class="control-label" for="name">Received At</label> </td>
+                    <td><input type="number" autocomplete="off" class="form-control" id="Received At" name="Received At"
+                            required placeholder="Received At" [(ngModel)]="grains.salesDetails.receivedAt" required>
+                    </td>
+                </tr>
+
+                <!-- <tr>
+                        <td> <label class="control-label" for="name">Difference </label> </td>
+                            <td><input type="number"   autocomplete="off" class="form-control"
+                                id="Difference" name="Difference" required placeholder="Difference" 
+                                [(ngModel)]="grains.salesDetails.difference" required>
+                        </td>
+                    </tr> -->
+
+                <tr>
+                    <td><label class="control-label" for="name">Bag</label> </td>
+                    <td><input type="text" autocomplete="off" class="form-control" id="Bag" name="Bag" required
+                            placeholder="Bag" [(ngModel)]="grains.salesDetails.bag" required>
+                    </td>
+                </tr>
+
+                <!-- <tr>
+                        <td>
+                            <label class="control-label" for="name">Broker</label> </td>
+                            <td><input type="text"   autocomplete="off" class="form-control" id="Broker"
+                                name="Broker" required placeholder="Broker" 
+                                [(ngModel)]="grains.salesDetails.broker" required>
+                        </td>
+                    </tr> -->
+            </table>
+
+            <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button>
+        </form>
+    </div>
+</div>

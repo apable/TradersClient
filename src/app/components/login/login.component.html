@@ -1,0 +1,33 @@
+<h2 *ngIf="!authenticationService.isUserLoggedIn() ">Login</h2>
+<div class="card my-5" style="background-color: #FF9800" *ngIf="!authenticationService.isUserLoggedIn() ">
+
+	<div class="card-body bg-light">
+		<form (ngSubmit)="login()" #userForm="ngForm">
+
+			<div class="form-group">
+				<label for="name">Name</label> <input type="text" [(ngModel)]="user.username" class="form-control"
+					id="user.username" name="user.username" placeholder="Enter your name" required #name="ngModel">
+			</div>
+			<!-- <div [hidden]="!username.pristine" class="alert alert-danger">Name
+				is required</div> -->
+
+			<div class="form-group">
+				<label for="password">Password</label> <input type="text" [(ngModel)]="user.password"
+					class="form-control" id="password" name="password" placeholder="Enter your password" required
+					#password="ngModel">
+				<!-- <div [hidden]="!password.pristine" class="alert alert-danger">Password
+					is required</div> -->
+			</div>
+
+
+			<div class="form-group">
+				<button [disabled]="loading" class="btn btn-primary " *ngIf="authenticationService.isLoggedIn()">
+					<span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+					Login
+				</button>
+				<!-- 	<a routerLink="submit" class="btn btn-link">Submit</a> -->
+				<!--  <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button> -->
+			</div>
+		</form>
+	</div>
+</div>

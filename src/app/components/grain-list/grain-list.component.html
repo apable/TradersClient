@@ -1,0 +1,79 @@
+<div>
+  <label for="grains">Grain Name</label>
+  <select name="selectedGrain" id="selectedGrain" [(ngModel)]="selectedGrain" (change)="onGrainChange()">
+    <option *ngFor="let selectedGrain of unique  ;" [value]="selectedGrain">{{selectedGrain}}</option>
+  </select>
+</div>
+
+<label>Purchase Details</label>
+<div class="card my-5">
+  <div class="card-body">
+
+    <table class="table table-bordered table-striped">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Grain Name</th>
+          <th scope="col">Date</th>
+          <th scope="col">Genes</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Rate</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Closing Stock</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let grain of grains">
+          <td>{{grain.grainName}}</td>
+          <td>{{grain?.purchaseDetails?.date}}</td>
+          <td>{{grain?.purchaseDetails?.genes}}</td>
+          <td>{{grain?.purchaseDetails?.quantity}}</td>
+          <td>{{grain?.purchaseDetails?.rate}}</td>
+          <td>{{grain?.purchaseDetails?.amount}}</td>
+          <td>{{grain?.purchaseDetails?.closingStock}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<label>Sales Details</label>
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Grain Name</th>
+          <th scope="col">Date</th>
+          <th scope="col">Bill</th>
+          <th scope="col">Party</th>
+          <th scope="col">Gst No.</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Rate</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Received At</th>
+          <th scope="col">Difference</th>
+          <th scope="col">Bag</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let grain of grains">
+          <td>{{grain.grainName}}</td>
+          <td>{{grain?.salesDetails?.date}}</td>
+          <td>{{grain?.salesDetails?.bill}}</td>
+          <td>{{grain?.salesDetails?.party}}</td>
+          <td>{{grain?.salesDetails?.gstNumber}}</td>
+          <td>{{grain?.salesDetails?.quantity}}</td>
+          <td>{{grain?.salesDetails?.rate}}</td>
+          <td>{{grain?.salesDetails?.amount}}</td>
+          <td>{{grain?.salesDetails?.receivedAt}}</td>
+          <td>{{grain?.salesDetails?.difference}}</td>
+          <td>{{grain?.salesDetails?.bag}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<button type="button" (click)="export()" class="btn btn-info">
+  Export
+</button>
